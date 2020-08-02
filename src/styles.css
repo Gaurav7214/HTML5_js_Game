@@ -1,0 +1,14 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+
+img {
+  display: none;
+}
+
+#gameScreen {
+  background-image: url(/assets/images/space.png);
+}
+
+
