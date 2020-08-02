@@ -27,13 +27,17 @@ export default class Player {
 
   draw(ctx) {
     ctx.fillStyle = "#0ff";
-    ctx.drawImage(
-      this.img,
-      this.position.x,
-      this.position.y,
-      this.width,
-      this.height
-    );
+    var image = new Image();  // see note on creating an image
+    image.src = "assets/images/austronaut.png";
+    image.onload = function() {
+      ctx.drawImage(
+        this,
+        Player.position.x,
+        Player.position.y,
+        Player.width,
+        Player.height
+      );
+    }
   }
 
   update(deltatime) {

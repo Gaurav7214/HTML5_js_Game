@@ -20,13 +20,17 @@ export default class Pikachu {
   }
 
   draw(ctx) {
-    ctx.drawImage(
-      this.image,
-      this.position.x,
-      this.position.y,
-      this.width,
-      this.height
-    );
+    var image = new Image();  // see note on creating an image
+    image.src = "assets/images/pokemon.png";
+    image.onload = function() {
+      ctx.drawImage(
+        this,
+        Pikachu.position.x,
+        Pikachu.position.y,
+        Pikachu.width,
+        Pikachu.height
+      );
+    }
   }
 
   update(player) {

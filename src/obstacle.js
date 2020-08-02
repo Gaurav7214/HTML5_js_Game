@@ -12,13 +12,17 @@ export default class Obstacle {
   }
 
   draw(ctx) {
-    ctx.drawImage(
-      this.image,
-      this.position.x,
-      this.position.y,
-      this.width,
-      this.height
-    );
+    var image = new Image();  // see note on creating an image
+    image.src = "assets/images/meteor.png";
+    image.onload = function() {
+      ctx.drawImage(
+        this,
+        Obstacle.position.x,
+        Obstacle.position.y,
+        Obstacle.width,
+        Obstacle.height
+      );
+    }
   }
 
   update(player) {
